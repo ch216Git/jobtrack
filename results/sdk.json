@@ -1,0 +1,201 @@
+{
+  "harness": "sdk",
+  "model": "claude-opus-5-5",
+  "effort": "medium",
+  "turns": [
+    {
+      "label": "t1",
+      "input": 4,
+      "cache_read": 2018,
+      "cache_write": 2277,
+      "output": 279,
+      "model_calls": 3,
+      "tools": [
+        "save_preference",
+        "save_preference"
+      ],
+      "seconds": 24.43,
+      "cost_usd": 0.017627,
+      "cache_hit_pct": 46.9,
+      "session": "s1",
+      "id": "t1",
+      "answer": "שמרתי את ההעדפות שלך:\n- **אופן עבודה:** רק remote\n- **שכר מינימום:** 35,000 ₪\n\nמעכשיו, אם תבקשי לרשום משרה שלא עומדת בתנאים האלה, אציין את זה ואשאל אותך לפני שאמשיך."
+    },
+    {
+      "label": "t2",
+      "input": 8,
+      "cache_read": 7661,
+      "cache_write": 836,
+      "output": 618,
+      "model_calls": 3,
+      "tools": [
+        "fetch_job_posting",
+        "add_application"
+      ],
+      "seconds": 26.21,
+      "cost_usd": 0.018104,
+      "cache_hit_pct": 90.1,
+      "session": "s1",
+      "id": "t2",
+      "answer": "רשמתי את ההגשה ל-Globex (מזהה a1, סטטוס \"הוגש\"). המשרה מתאימה להעדפות שלך:\n- **תפקיד:** Senior Python Developer\n- **אופן עבודה:** remote מלא (ישראל)\n- **שכר:** 35,000–45,000 ₪, כך שהמינימום שלך בטווח\n- **טכנולוגיות:** Python, FastAPI, AWS, נדרשות 5+ שנות ניסיון\n- **תהליך הגיוס:** שיחה עם מגייס/ת, מטלת בית ושני ראיונות טכניים\n\nבהצלחה!"
+    },
+    {
+      "label": "t3",
+      "input": 8,
+      "cache_read": 10010,
+      "cache_write": 541,
+      "output": 311,
+      "model_calls": 3,
+      "tools": [
+        "list_applications",
+        "update_application"
+      ],
+      "seconds": 22.62,
+      "cost_usd": 0.010959,
+      "cache_hit_pct": 94.8,
+      "session": "s1",
+      "id": "t3",
+      "answer": "עדכנתי את הסטטוס של Globex ל-**screening**, והוספתי הערה שהשיחה עם המגייס/ת הסתיימה. לפי תיאור המשרה, השלב הבא הוא מטלת בית. בהצלחה!"
+    },
+    {
+      "label": "t4",
+      "input": 4,
+      "cache_read": 3390,
+      "cache_write": 838,
+      "output": 260,
+      "model_calls": 3,
+      "tools": [
+        "list_applications",
+        "get_preferences"
+      ],
+      "seconds": 23.54,
+      "cost_usd": 0.010289,
+      "cache_hit_pct": 80.1,
+      "session": "s2",
+      "id": "t4",
+      "answer": "**המצב הנוכחי:** יש לך מועמדות פעילה אחת.\n- **Globex**: Senior Python Developer, בעבודה מרחוק. המועמדות בשלב סינון ראשוני (screening), ועודכנה היום (28.10.2026).\n\n**העדפות החיפוש שלך:**\n- **אופן עבודה:** מרחוק\n- **שכר מינימלי:** 35,000 ₪\n\nרוצה להוסיף מועמדות חדשה או לעדכן את מה שקורה עם Globex?"
+    },
+    {
+      "label": "t5",
+      "input": 6,
+      "cache_read": 4655,
+      "cache_write": 394,
+      "output": 411,
+      "model_calls": 2,
+      "tools": [
+        "fetch_job_posting"
+      ],
+      "seconds": 23.82,
+      "cost_usd": 0.011145,
+      "cache_hit_pct": 92.1,
+      "session": "s2",
+      "id": "t5",
+      "answer": "**לא רשמתי את ההגשה**, כי המשרה לא מתאימה להעדפות השמורות שלך:\n\n**Acme Robotics, Backend Engineer** (הרצליה)\n- ❌ **אופן עבודה:** המשרה דורשת הגעה למשרד 5 ימים בשבוע, וההעדפה השמורה שלך היא עבודה מרחוק.\n- ⚠️ **שכר:** הטווח הוא 30,000–38,000 ₪. רק החלק העליון שלו עומד במינימום שלך (35,000 ₪).\n\nאיך להמשיך?\n1. **לרשום בכל זאת** כחריג, וההעדפות נשארות כמו שהן.\n2. **לשנות את ההעדפה** לעבודה היברידית או מהמשרד, ואז לרשום.\n3. **לא לרשום.**"
+    },
+    {
+      "label": "t6",
+      "input": 6,
+      "cache_read": 5589,
+      "cache_write": 836,
+      "output": 613,
+      "model_calls": 2,
+      "tools": [
+        "add_application"
+      ],
+      "seconds": 21.71,
+      "cost_usd": 0.017582,
+      "cache_hit_pct": 86.9,
+      "session": "s2",
+      "id": "t6",
+      "answer": "רשמתי את **Acme Robotics, Backend Engineer** בסטטוס saved (מזהה a2). בהערות ציינתי שזה חריג שאישרת.\n\nההעדפות שלך לא השתנו: עבודה מרחוק ושכר מינימלי של 35,000 ₪.\n\nשימי לב שבמודעה כתוב להגיש עד סוף החודש, כלומר בעוד כ-3 ימים. כשתגישי, תגידי לי ואעדכן את הסטטוס ל-applied."
+    },
+    {
+      "label": "t7",
+      "input": 6,
+      "cache_read": 7124,
+      "cache_write": 576,
+      "output": 361,
+      "model_calls": 3,
+      "tools": [
+        "update_application",
+        "save_preference"
+      ],
+      "seconds": 21.32,
+      "cost_usd": 0.011549,
+      "cache_hit_pct": 92.4,
+      "session": "s2",
+      "id": "t7",
+      "answer": "עדכנתי את המועמדות ל-Acme Robotics (a2) לסטטוס withdrawn.\n\nשמרתי גם את ההחלטה עצמה: ויתרת על Acme כי המשרה דורשת הגעה למשרד. ככה אזכור את זה בשיחות הבאות.\n\nהמועמדות הפעילה היחידה שנשארה היא Globex, שנמצאת בשלב screening."
+    }
+  ],
+  "totals": {
+    "input": 42,
+    "cache_read": 40447,
+    "cache_write": 6298,
+    "output": 2853,
+    "model_calls": 19,
+    "cost_usd": 0.097255,
+    "seconds": 163.65,
+    "cache_hit_pct": 86.4
+  },
+  "checks": [
+    {
+      "name": "work_mode preference saved",
+      "after_turn": "t1",
+      "passed": true
+    },
+    {
+      "name": "min_salary preference saved",
+      "after_turn": "t1",
+      "passed": true
+    },
+    {
+      "name": "external tool used for Globex posting",
+      "after_turn": "t2",
+      "passed": true
+    },
+    {
+      "name": "Globex moved to screening",
+      "after_turn": "t3",
+      "passed": true
+    },
+    {
+      "name": "session 2 recalled remote preference",
+      "after_turn": "t4",
+      "passed": true
+    },
+    {
+      "name": "conflict: Acme NOT recorded before confirmation",
+      "after_turn": "t5",
+      "passed": true
+    },
+    {
+      "name": "Acme recorded as saved after confirmation",
+      "after_turn": "t6",
+      "passed": true
+    },
+    {
+      "name": "Acme withdrawn",
+      "after_turn": "t7",
+      "passed": true
+    },
+    {
+      "name": "decision about Acme remembered",
+      "after_turn": "t7",
+      "passed": true
+    }
+  ],
+  "checks_passed": "9/9",
+  "loc": {
+    "replaces_by_part": {
+      "loop": 3,
+      "context": 1,
+      "history": 1,
+      "tokens": 7,
+      "tools": 6,
+      "memory": 1,
+      "total": 19
+    },
+    "total_sdk_lines": 131
+  }
+}

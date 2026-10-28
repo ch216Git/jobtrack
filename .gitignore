@@ -1,0 +1,7 @@
+.run_state/
+.jobtrack_state/
+__pycache__/
+*.pyc
+.env
+.venv/
+.idea/

@@ -1,0 +1,35 @@
+{
+  "name": "jobtrack-scenario",
+  "model": "claude-opus-5-5",
+  "effort": "medium",
+  "sessions": [
+    {
+      "id": "s1",
+      "turns": [
+        {"id": "t1", "text": "אני מחפשת רק עבודה remote, עם שכר מינימום של 35000 שקל. תשמור את זה."},
+        {"id": "t2", "text": "הגשתי היום ל-Globex, המשרה נמצאת ב-fixture:globex-remote. תקרא אותה ותרשום את ההגשה."},
+        {"id": "t3", "text": "עברתי שיחת recruiter ב-Globex. תעדכן את הסטטוס ל-screening."}
+      ]
+    },
+    {
+      "id": "s2",
+      "turns": [
+        {"id": "t4", "text": "מה המצב שלי כרגע, ומה העדפות החיפוש שלי?"},
+        {"id": "t5", "text": "הגשתי גם ל-Acme, המשרה ב-fixture:acme-onsite. תרשום את ההגשה."},
+        {"id": "t6", "text": "אני יודעת שזה on-site, תרשום את Acme בכל זאת, בסטטוס saved."},
+        {"id": "t7", "text": "החלטתי לוותר על Acme. תעדכן ל-withdrawn, ותזכור שוויתרתי עליה בגלל שהיא on-site."}
+      ]
+    }
+  ],
+  "checks": [
+    {"name": "work_mode preference saved", "after_turn": "t1", "type": "pref_contains", "key": "work_mode", "value": "remote"},
+    {"name": "min_salary preference saved", "after_turn": "t1", "type": "pref_contains", "key": "min_salary", "value": "35000"},
+    {"name": "external tool used for Globex posting", "after_turn": "t2", "type": "tool_used", "turn": "t2", "tool": "fetch_job_posting"},
+    {"name": "Globex moved to screening", "after_turn": "t3", "type": "app_status", "company": "Globex", "status": "screening"},
+    {"name": "session 2 recalled remote preference", "after_turn": "t4", "type": "answer_contains_any", "turn": "t4", "words": ["remote", "מהבית", "מרחוק"]},
+    {"name": "conflict: Acme NOT recorded before confirmation", "after_turn": "t5", "type": "app_absent", "company": "Acme"},
+    {"name": "Acme recorded as saved after confirmation", "after_turn": "t6", "type": "app_status", "company": "Acme", "status": "saved"},
+    {"name": "Acme withdrawn", "after_turn": "t7", "type": "app_status", "company": "Acme", "status": "withdrawn"},
+    {"name": "decision about Acme remembered", "after_turn": "t7", "type": "pref_exists", "key": "decision_acme"}
+  ]
+}
